@@ -1,0 +1,180 @@
+[data-tab-content] {
+    display: none;
+  }
+  
+  .active[data-tab-content] {
+    display: block;
+  }
+  
+  body {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .tabs {
+    display: flex;
+    justify-content: start;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid black;
+  }
+
+  .tabsa1{
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+  }
+
+  .tabsa2{
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+  }
+
+  .tabsa4 {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+  }
+  
+  .tab {
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .taba1{
+    cursor: pointer;
+    padding-top:10px;
+    padding-right:50px;
+    padding-left:50px;
+    padding-bottom:10px;
+  }
+
+  .taba2 {
+    cursor: pointer;
+    padding-top:10px;
+    padding-right:50px;
+    padding-left:50px;
+    padding-bottom:10px;
+  }
+
+  .taba3 {
+    cursor: pointer;
+    padding-top:10px;
+    padding-right:50px;
+    padding-left:50px;
+    padding-bottom:10px;
+  }
+
+  .taba4 {
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  .tab.active {
+    background-color: #6cbd66;
+  }
+
+  .taba1.active{
+    background-color:aqua;
+  }
+
+  .taba2.active{
+    background-color:aqua;
+
+  }
+
+  .taba3.active{
+    background-color:aqua;
+  }
+
+  .taba4.active{
+    background-color:aqua;
+  }
+  
+  .tab:hover {
+    background-color: #b6d4c6;
+  }
+
+  .taba1:hover{
+    background-color:aquamarine;
+  }
+
+  .taba2:hover{
+    background-color:aquamarine;
+  }
+
+  .taba3:hover{
+    background-color:aquamarine;
+  }
+
+  .taba4:hover{
+    background-color:aquamarine;
+  }
+  
+  .tab-content {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .taba2-content{
+    margin-left:20px;
+    margin-right:20px;
+  }
+
+  .taba4-content {
+    margin-left:20px;
+    margin-right:20px;
+  }
+
+
+
+[data-taba1-content]{
+  display:none;
+}
+
+.active[data-taba1-content]{
+  display:block;
+}
+
+[data-taba2-content]{
+  display:none;
+}
+
+.active[data-taba2-content]{
+  display:block;
+}
+
+[data-taba3-content]{
+  display:none;
+}
+
+.active[data-taba3-content]{
+  display:block;
+}
+
+/* For Assignment 3 */
+#asign3question1output{
+  font-size: larger;
+}
+
+[data-tabA4-content]{
+  display : none;
+}
+
+  .active[data-tabA4-content]{
+    display: block;
+  }
