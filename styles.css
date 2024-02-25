@@ -7,6 +7,18 @@
   color: rgb(34, 140, 49);
 }
 
+#home{
+  color:rgb(54, 59, 128);
+}
+
+/* not available id tabs */
+
+.asignnotvail{
+  color: rgb(150, 10, 10);
+}
+
+/*  */
+
 
 [data-tab-content] {
     display: none;
