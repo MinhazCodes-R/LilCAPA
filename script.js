@@ -590,19 +590,14 @@ assignment6question6button.addEventListener('click', ()=>{
 //For Question 7
 const assignment6question7button = document.getElementById('asign6question7button');
 
-const assignment6question7output = document.getElementById('asign6question7output');
-
-function asign6question7(R){
-  R = parseFloat(document.getElementById('asn6question7').value);
-
-  let r = R*(((2**0.5)-1)/(1-((2**0.5)/2)));
-  assignment6question7output.innerHTML = "The value of R' is: " + r.toString();
-
-};
+const assignment6question7output = document.getElementById('asign6question7outputa');
 
 assignment6question7button.addEventListener('click',()=>{
 
-  asign6question7(assignment6question7text);
+  var R = parseFloat(document.getElementById('asn6question7').value);
+
+  let r = R*(((2**0.5)-1)/(1-((2**0.5)/2)));
+  assignment6question7output.innerHTML = "The value of R' is: " + r.toString();
 
 });
 
