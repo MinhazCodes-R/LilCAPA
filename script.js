@@ -456,19 +456,25 @@ assignment6question1button.addEventListener('click',()=>{
   var a2 = parseFloat(document.getElementById('asn6question1d').value);
   var a3 = parseFloat(document.getElementById('asn6question1e').value);
   var v = parseFloat(document.getElementById('asn6question1f').value);
-  
-  r1, r5,a1,a2,a3,v = parseFloat(document.getElementById('asn6question1a').value), parseFloat(document.getElementById('asn6question1b').value), parseFloat(document.getElementById('asn6question1c').value), parseFloat(document.getElementById('asn6question1d').value), parseFloat(document.getElementById('asn6question1e').value), parseFloat(document.getElementById('asn6question1f').value);
 
-  r1,r5,a1,a2,a3,v = 1.0*r1,1.0*r5,1.0*a1,1.0*a2,1.0*a3,1.0*v     
-  a5 = a1 - a2 + a3
+            
+  var a5 = a1 - a2 + a3;
+  console.log(a5);
 
-  v1 = r1 * a1
-  v2 = v - v1
-  r2 = v2/a2
+  var v1 = r1 * a1;
+  console.log(v1);
 
-  v5 = a5 * r5
-  v3 = v - v5
-  r3 = v3/a3
+  var v2 = v - v1;
+  console.log(v2);
+  var r2 = v2/a2;
+  console.log(r2);
+
+  var v5 = a5 * r5;
+  console.log(v5);
+  var v3 = v - v5;
+  console.log(v3);
+  var r3 = v3/a3;
+  console.log(r3);
 
   assignment6question1output.innerHTML = "The current at R5 is: "+a5.toString()+" A";
   assignment6question1outputb.innerHTML = "The resistance at R2 is: "+r2.toString()+" Ohms";
