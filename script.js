@@ -39,8 +39,6 @@ taba2.forEach(tab =>{
   tab.addEventListener('click', ()=>{
 
     const target = document.querySelector(tab.dataset.taba2Target);
-    console.log(target);
-    console.log(target.classList);
     taba2contents.forEach(taba2content => {
 
       taba2content.classList.remove('active');
@@ -70,10 +68,9 @@ const taba3contents = document.querySelectorAll('[data-taba3-content]');
 taba3.forEach(tab => {
   tab.addEventListener('click', ()=>{
 
-    console.log(tab)
+
     const target = document.querySelector(tab.dataset.taba3Target);
-    console.log(target);
-    console.log(target.classList);
+
 
     taba3contents.forEach(tabcontent => {tabcontent.classList.remove('active');});//removing all active from the taba3contents
 
@@ -181,7 +178,6 @@ assignment3question5button.addEventListener('click', ()=> {
 //For Question 6
 
 let calculateResistance = (sideLength_mm, resistivity1, length1_cm, resistivity2, length2_cm) => {
-  console.log(sideLength_mm,resistivity1,length1_cm,resistivity2,length2_cm);
   sideLength_mm = sideLength_mm/1000;
   let A = sideLength_mm**2;
   let L1 = length1_cm / 100.0;
@@ -191,7 +187,7 @@ let calculateResistance = (sideLength_mm, resistivity1, length1_cm, resistivity2
   let r2 = (resistivity2 * L2) / A;
 
   let totalResistance = r1 + r2;
-  console.log(totalResistance);
+
   totalResistance = totalResistance.toString()
   let return_statement =  "The total resistance between the ends of the rods is:" + totalResistance + " ohm";
 
@@ -396,10 +392,8 @@ const taba6contents = document.querySelectorAll('[data-taba6-content]');
 taba6.forEach(tab => {
   tab.addEventListener('click', ()=>{
 
-    console.log(tab)
     const target = document.querySelector(tab.dataset.taba6Target);
-    console.log(target);
-    console.log(target.classList);
+
 
     taba6contents.forEach(tabcontent => {tabcontent.classList.remove('active');});//removing all active from the taba3contents
 
@@ -438,7 +432,6 @@ assignment6question2button.addEventListener('click',() =>{
   let re = (1.0 / r1) + (1.0 / rd);
   let rt = (1.0 / re);
 
-  console.log(rt);  
   assignment6question2output.innerHTML = "The total resistance between point A and B is: "+rt.toString()+" Ohms";
 });
 
@@ -465,7 +458,7 @@ assignment6question1button.addEventListener('click',()=>{
   var v = parseFloat(document.getElementById('asn6question1f').value);
   
   r1, r5,a1,a2,a3,v = parseFloat(document.getElementById('asn6question1a').value), parseFloat(document.getElementById('asn6question1b').value), parseFloat(document.getElementById('asn6question1c').value), parseFloat(document.getElementById('asn6question1d').value), parseFloat(document.getElementById('asn6question1e').value), parseFloat(document.getElementById('asn6question1f').value);
-  console.log(r1, r5,a1,a2,a3,v);
+
   r1,r5,a1,a2,a3,v = 1.0*r1,1.0*r5,1.0*a1,1.0*a2,1.0*a3,1.0*v     
   a5 = a1 - a2 + a3
 
@@ -767,16 +760,18 @@ const assignment6question13output = document.getElementById('asign6question13out
 
 
 assignment6question13button.addEventListener('click', ()=>{
-  var r1 = parseFloat(document.getElementById('asn6question12a').value);
-  var r2 = parseFloat(document.getElementById('asn6question12b').value);
-  var r3 = parseFloat(document.getElementById('asn6question12c').value);
-  var v1 = parseFloat(document.getElementById('asn6question12d').value);
-  var v2 = parseFloat(document.getElementById('asn6question12e').value);
-  r1,r2,r3,v1,v2 = parseFloat(r1),parseFloat(r2), parseFloat(r3), parseFloat(v1), parseFloat(v2);
+  var r1 = parseFloat(document.getElementById('asn6question13a').value);
+  var r2 = parseFloat(document.getElementById('asn6question13b').value);
+  var r3 = parseFloat(document.getElementById('asn6question13c').value);
+  var v1 = parseFloat(document.getElementById('asn6question13d').value);
+  var v2 = parseFloat(document.getElementById('asn6question13e').value);
+
+  r1,r2,r3,v1,v2 = 1.0*r1,1.0*r2,1.0*r3,1.0*v1,1.0*v2;
 
   var i = v1/(r1+r2);
   var vab = Math.abs(v2-(i*r2));
-  assignment6question13output.innerHTML = "The potential difference across points a and b is: "+vab.toString()+" V";
+
+  assignment6question13output.innerHTML = "The potential difference across points a and b is: "+ vab.toString()+" V";
 
 });
 
