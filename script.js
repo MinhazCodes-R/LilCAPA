@@ -35,8 +35,6 @@ tabs.forEach(tab => {
 const taba2 = document.querySelectorAll('[data-taba2-target]');
 const taba2contents = document.querySelectorAll('[data-taba2-content]');
 
-
-
 taba2.forEach(tab =>{
   tab.addEventListener('click', ()=>{
 
@@ -415,20 +413,22 @@ taba6.forEach(tab => {
 });
 
 //For question 1 but with variables of question 2
-const assignment6question2texta = parseFloat(document.getElementById('asn6question2a').value);
-const assignment6question2textb = parseFloat(document.getElementById('asn6question2b').value);
-const assignment6question2textc = parseFloat(document.getElementById('asn6question2c').value);
-const assignment6question2textd = parseFloat(document.getElementById('asn6question2d').value);
-const assignment6question2texte = parseFloat(document.getElementById('asn6question2e').value);
-const assignment6question2textf = parseFloat(document.getElementById('asn6question2f').value);
 
 const assignment6question2button = document.getElementById('asign6question2button');
 
 const assignment6question2output = document.getElementById('asign6question2output');
 
 
-function calculateTotalResistance0601(r1, r2, r3, r4, r5, r6) {
-  console.log(r1,r2,r3,r4,r5,r6);
+assignment6question2button.addEventListener('click',() =>{
+
+  var r1 = parseFloat(document.getElementById('asn6question2a').value);
+  var r2 = parseFloat(document.getElementById('asn6question2b').value);
+  var r3 = parseFloat(document.getElementById('asn6question2c').value);
+  var r4 = parseFloat(document.getElementById('asn6question2d').value);
+  var r5 = parseFloat(document.getElementById('asn6question2e').value);
+  var r6 = parseFloat(document.getElementById('asn6question2f').value);
+
+
   let ra = (1.0 / r3) + (1.0 / r4);
   ra = (1.0 / ra);
   let rb = r5 + r6;
@@ -437,12 +437,9 @@ function calculateTotalResistance0601(r1, r2, r3, r4, r5, r6) {
   let rd = rc + r2;
   let re = (1.0 / r1) + (1.0 / rd);
   let rt = (1.0 / re);
-  
-  assignment6question2output.innerHTML = "The total resistance between point A and B is: "+rt.toString()+" Ohms";
-}
 
-assignment6question2button.addEventListener('click',() =>{
-  calculateTotalResistance0601(assignment6question2texta,assignment6question2textb,assignment6question2textc,assignment6question2textd,assignment6question2texte,assignment6question2textf);
+  console.log(rt);  
+  assignment6question2output.innerHTML = "The total resistance between point A and B is: "+rt.toString()+" Ohms";
 });
 
 
@@ -451,23 +448,25 @@ assignment6question2button.addEventListener('click',() =>{
 //this was caused by an error with filing
 
 
-
-const assignment6question1texta = parseFloat(document.getElementById('asn6question1a').value);
-const assignment6question1textb = parseFloat(document.getElementById('asn6question1b').value);
-const assignment6question1textc = parseFloat(document.getElementById('asn6question1c').value);
-const assignment6question1textd = parseFloat(document.getElementById('asn6question1d').value);
-const assignment6question1texte = parseFloat(document.getElementById('asn6question1e').value);
-const assignment6question1textf = parseFloat(document.getElementById('asn6question1f').value);
-
 const assignment6question1button = document.getElementById('asign6question1button');
 
 const assignment6question1output = document.getElementById('asign6question1output');
 const assignment6question1outputb = document.getElementById('asign6question1outputb');
 const assignment6question1outputc = document.getElementById('asign6question1outputc');
 
-function calculateResistance6(r1, r5,a1,a2,a3,v) {
-  r1,r5,a1,a2,a3,v = 1.0*r1,1.0*r5,1.0*a1,1.0*a2,1.0*a3,1.0*v
-            
+
+assignment6question1button.addEventListener('click',()=>{
+
+  var r1 = parseFloat(document.getElementById('asn6question1a').value);
+  var r5 = parseFloat(document.getElementById('asn6question1b').value);
+  var a1 = parseFloat(document.getElementById('asn6question1c').value);
+  var a2 = parseFloat(document.getElementById('asn6question1d').value);
+  var a3 = parseFloat(document.getElementById('asn6question1e').value);
+  var v = parseFloat(document.getElementById('asn6question1f').value);
+  
+  r1, r5,a1,a2,a3,v = parseFloat(document.getElementById('asn6question1a').value), parseFloat(document.getElementById('asn6question1b').value), parseFloat(document.getElementById('asn6question1c').value), parseFloat(document.getElementById('asn6question1d').value), parseFloat(document.getElementById('asn6question1e').value), parseFloat(document.getElementById('asn6question1f').value);
+  console.log(r1, r5,a1,a2,a3,v);
+  r1,r5,a1,a2,a3,v = 1.0*r1,1.0*r5,1.0*a1,1.0*a2,1.0*a3,1.0*v     
   a5 = a1 - a2 + a3
 
   v1 = r1 * a1
@@ -477,55 +476,43 @@ function calculateResistance6(r1, r5,a1,a2,a3,v) {
   v5 = a5 * r5
   v3 = v - v5
   r3 = v3/a3
+
   assignment6question1output.innerHTML = "The current at R5 is: "+a5.toString()+" A";
   assignment6question1outputb.innerHTML = "The resistance at R2 is: "+r2.toString()+" Ohms";
   assignment6question1outputc.innerHTML = "The resistance at R3 is: "+r3.toString()+" Ohms";
 
-}
-
-
-assignment6question1button.addEventListener('click',()=>{
-  calculateResistance6(assignment6question1texta,assignment6question1textb,assignment6question1textc,assignment6question1textd,assignment6question1texte,assignment6question1textf);
-  console.log('hell');  
 });
 
 //for Question 3
-const assignment6question3text = parseFloat(document.getElementById('asn6question3').value);
 
 const assignment6question3button = document.getElementById('asign6question3button');
 
 const assignment6question3output = document.getElementById('asign6question3output');
 
-function calculateResistance06(r1) {
-  r1 = parseFloat(r1);
+assignment6question3button.addEventListener('click', ()=>{
+  var r1 = parseFloat(document.getElementById('asn6question3').value);
+
   let r2 = ((r1 * (Math.sqrt(2.0) - 1)) / (1 - (Math.sqrt(2) / 2)));
 
   assignment6question3output.innerHTML = "The resistance value for R' is: "+ r2.toString()+ " Ohms";
-}
-
-assignment6question3button.addEventListener('click', ()=>{
-  calculateResistance06(assignment6question3text);
 });
 
 
 //For Question 4
-
-const assignment6question4textb = parseFloat(document.getElementById('asn6question4a').value);
-const assignment6question4textc = parseFloat(document.getElementById('asn6question4b').value);
-const assignment6question4textd = parseFloat(document.getElementById('asn6question4c').value);
-const assignment6question4texte = parseFloat(document.getElementById('asn6question4d').value);
-const assignment6question4textf = parseFloat(document.getElementById('asn6question4e').value);
-
 const assignment6question4button = document.getElementById('asign6question4button');
 
 const assignment6question4output = document.getElementById('asign6question4outputa');
 const assignment6question4outputb = document.getElementById('asign6question4outputb');
 const assignment6question4outputc = document.getElementById('asign6question4outputc');
 
-function calculateElectricValues(e1,i2,r1,r2,r3) {
-  console.log('hello');
-
-  e1 = parseFloat(e1); i2=parseFloat(i2);r1=parseFloat(r1);parseFloat(r2);parseFloat(r3);
+assignment6question4button.addEventListener('click',()=>{
+  
+  
+  var e1 = parseFloat(document.getElementById('asn6question4a').value);
+  var i2 = parseFloat(document.getElementById('asn6question4b').value);
+  var r1 = parseFloat(document.getElementById('asn6question4c').value);
+  var r2 = parseFloat(document.getElementById('asn6question4d').value);
+  var r3 = parseFloat(document.getElementById('asn6question4e').value);
 
   e1 = 1.0 * e1;
   r1 = 1.0 * r1;
@@ -539,43 +526,31 @@ function calculateElectricValues(e1,i2,r1,r2,r3) {
   assignment6question4output.innerHTML = "Current in I1: "+ i1.toString()+ "A";
   assignment6question4outputb.innerHTML = "Current in I2: "+ i3.toString()+ "A";
   assignment6question4outputc.innerHTML = "Voltage in E2: "+ v2.toString()+ "V";
-}
 
-assignment6question4button.addEventListener('click',()=>{
-  calculateElectricValues(assignment6question4textb,assignment6question4textc,assignment6question4textd,assignment6question4texte,assignment6question4textf);
 });
 
 //For Question 5
-
-const assignment6question5textb = parseFloat(document.getElementById('asn6question5a').value);
-const assignment6question5textc = parseFloat(document.getElementById('asn6question5b').value);
-const assignment6question5textd = parseFloat(document.getElementById('asn6question5c').value);
-const assignment6question5texte = parseFloat(document.getElementById('asn6question5d').value);
-const assignment6question5textf = parseFloat(document.getElementById('asn6question5e').value);
-const assignment6question5textg = parseFloat(document.getElementById('asn6question5f').value);
-const assignment6question5texth = parseFloat(document.getElementById('asn6question5g').value);
-const assignment6question5texti = parseFloat(document.getElementById('asn6question5h').value);
-const assignment6question5textj = parseFloat(document.getElementById('asn6question5i').value);
-const assignment6question5textk = parseFloat(document.getElementById('asn6question5j').value);
-const assignment6question5textl = parseFloat(document.getElementById('asn6question5k').value);
 
 const assignment6question5button = document.getElementById('asign6question5button');
 
 const assignment6question5output = document.getElementById('asign6question5outputa');
 const assignment6question5outputb = document.getElementById('asign6question5outputb');
 
-function asignment6question5function(r1,r2,r3,r4,r5,r6,r7,r8,e1,e4,e6){
-  r1 = parseFloat(r1);
-  r2 = parseFloat(r2);
-  r3 = parseFloat(r3);
-  r4 = parseFloat(r4);
-  r5 = parseFloat(r5);
-  r6 = parseFloat(r6);
-  r7 = parseFloat(r7);
-  r8 = parseFloat(r8);
-  e1 = parseFloat(e1);
-  e4 = parseFloat(e4);
-  e6 = parseFloat(e6);
+
+
+assignment6question5button.addEventListener('click', () =>{
+
+  r1 = parseFloat(document.getElementById('asn6question5a').value);
+  r2 = parseFloat(document.getElementById('asn6question5b').value);
+  r3 = parseFloat(document.getElementById('asn6question5c').value);
+  r4 = parseFloat(document.getElementById('asn6question5d').value);
+  r5 = parseFloat(document.getElementById('asn6question5e').value);
+  r6 = parseFloat(document.getElementById('asn6question5f').value);
+  r7 = parseFloat(document.getElementById('asn6question5g').value);
+  r8 = parseFloat(document.getElementById('asn6question5h').value);
+  e1 = parseFloat(document.getElementById('asn6question5i').value);
+  e4 = parseFloat(document.getElementById('asn6question5j').value);
+  e6 = parseFloat(document.getElementById('asn6question5k').value);
 
   let i = (e1 + e6)/(r1+r2+r3+r6+r7);
   let vab = Math.abs((-e4 -(i*r7) + e6 -(i*r6)));
@@ -583,27 +558,23 @@ function asignment6question5function(r1,r2,r3,r4,r5,r6,r7,r8,e1,e4,e6){
    
   assignment6question5output.innerHTML = "The potential difference of Vab is: "+vab.toString()+"V";
   assignment6question5outputb.innerHTML = 'The current through r8 is: '+ fin.toString();
-};
-
-assignment6question5button.addEventListener('click', () =>{
-
-  asignment6question5function(assignment6question5textb,assignment6question5textc,assignment6question5textd,assignment6question5texte,assignment6question5textf,assignment6question5textg,assignment6question5texth,assignment6question5texti,assignment6question5textj,assignment6question5textk,assignment6question5textl);
 
 });
 
 //For Question 6
-const assignment6question6texth = parseFloat(document.getElementById('asn6question6a').value);
-const assignment6question6texti = parseFloat(document.getElementById('asn6question6b').value);
-const assignment6question6textj = parseFloat(document.getElementById('asn6question6c').value);
-const assignment6question6textk = parseFloat(document.getElementById('asn6question6d').value);
-const assignment6question6textl = parseFloat(document.getElementById('asn6question6e').value);
 
 const assignment6question6button = document.getElementById('asign6question6button');
 
 const assignment6question6output = document.getElementById('asign6question6outputa');
 
-function asignment6question6(r1,r2,r3,r4,v1){
-  r1,r2,r3,r4,v1=parseFloat(r1),parseFloat(r2),parseFloat(r3),parseFloat(r4),parseFloat(v1);
+
+assignment6question6button.addEventListener('click', ()=>{
+
+  r1 = parseFloat(document.getElementById('asn6question6a').value);
+  r2 = parseFloat(document.getElementById('asn6question6b').value);
+  r3 = parseFloat(document.getElementById('asn6question6c').value);
+  r4= parseFloat(document.getElementById('asn6question6d').value);
+  v1= parseFloat(document.getElementById('asn6question6e').value);
 
   rt = ((1.0/((1.0/(r1+r2))+(1.0/r3)))+(r4));
 
@@ -613,25 +584,16 @@ function asignment6question6(r1,r2,r3,r4,v1){
   
   p = (i1**2.0)*(r2);
 
-  assignment6question6output.innerHTML = "The going through R2 is: "+ p.toString()+ " W";  
-
-};
-
-assignment6question6button.addEventListener('click', ()=>{
-
-  asignment6question6(assignment6question6texth,assignment6question6texti,assignment6question6textj,assignment6question6textk,assignment6question6textl);
-
+  assignment6question6output.innerHTML = "The going through R2 is: "+ p.toString()+ " W";
 });
 
 //For Question 7
-const assignment6question7text = parseFloat(document.getElementById('asn6question7').value);
-
 const assignment6question7button = document.getElementById('asign6question7button');
 
 const assignment6question7output = document.getElementById('asign6question7output');
 
 function asign6question7(R){
-  R = parseFloat(R);
+  R = parseFloat(document.getElementById('asn6question7').value);
 
   let r = R*(((2**0.5)-1)/(1-((2**0.5)/2)));
   assignment6question7output.innerHTML = "The value of R' is: " + r.toString();
@@ -646,19 +608,23 @@ assignment6question7button.addEventListener('click',()=>{
 
 //For Question 8
 
-const assignment6question8texta = parseFloat(document.getElementById('asn6question8a').value);
-const assignment6question8textb = parseFloat(document.getElementById('asn6question8b').value);
-const assignment6question8textc = parseFloat(document.getElementById('asn6question8c').value);
-const assignment6question8textd = parseFloat(document.getElementById('asn6question8d').value);
-const assignment6question8texte = parseFloat(document.getElementById('asn6question8e').value);
-
 const assignment6question8button = document.getElementById('asign6question8button');
 
 const assignment6question8output = document.getElementById('asign6question8outputa');
 const assignment6question8outputb = document.getElementById('asign6question8outputb');
 const assignment6question8outputc = document.getElementById('asign6question8outputc');
 
-function assignment6_question8(i3,e1,r1,r2,r3){
+
+
+assignment6question8button.addEventListener('click', ()=>{
+
+  
+  var i3 = parseFloat(document.getElementById('asn6question8a').value);
+  var e1 = parseFloat(document.getElementById('asn6question8b').value);
+  var r1 = parseFloat(document.getElementById('asn6question8c').value);
+  var r2 = parseFloat(document.getElementById('asn6question8d').value);
+  var r3 = parseFloat(document.getElementById('asn6question8e').value);
+
 
   i3,e1,r1,r2,r3 = parseFloat(i3), parseFloat(e1),parseFloat(r1),parseFloat(r2),parseFloat(r3);
 
@@ -671,25 +637,24 @@ function assignment6_question8(i3,e1,r1,r2,r3){
   assignment6question8outputb.innerHTML = "Value of I2 is " + i2.toString();
   assignment6question8outputc.innerHTML = "Value of E2 is " + e2.toString();
 
-};
-
-assignment6question8button.addEventListener('click', ()=>{
-
   assignment6_question8(assignment6question8texta,assignment6question8textb,assignment6question8textc,assignment6question8textd,assignment6question8texte);
 
 });
 
 
 //For Question 9
-const assignment6question9textd = parseFloat(document.getElementById('asn6question9a').value);
-const assignment6question9texte = parseFloat(document.getElementById('asn6question9b').value);
 
 const assignment6question9button = document.getElementById('asign6question9button');
 
 const assignment6question9output = document.getElementById('asign6question9outputa');
 const assignment6question9outputb = document.getElementById('asign6question9outputb');
 
-function asignment6question9(s,p){
+
+assignment6question9button.addEventListener('click', ()=>{
+  
+  var s = parseFloat(document.getElementById('asn6question9a').value);
+  var p = parseFloat(document.getElementById('asn6question9b').value);
+
   s,p = parseFloat(s), parseFloat(p);
   s,p=1.0*s,1.0*p;
   var r1 = ((-s) + (sqrt((s**2)-(4.0*(-1.0)*((-s)*p)))))/(-2.0);
@@ -697,23 +662,11 @@ function asignment6question9(s,p){
   assignment6question9output.innerHTML = "The resistance of resistor 1 is" + r1.toString();
   assignment6question9output.innerHTML = "The resistance of resister 2 is" + r2.toString();
 
-}
-
-assignment6question9button.addEventListener('click', ()=>{
-
   asignment6question9(assignment6question9textd,assignment6question9texte);
 
 });
 
 //For Question 10
-
-const assignment6question10textb = parseFloat(document.getElementById('asn6question10a').value);
-const assignment6question10textc = parseFloat(document.getElementById('asn6question10b').value);
-const assignment6question10textd = parseFloat(document.getElementById('asn6question10c').value);
-const assignment6question10texte = parseFloat(document.getElementById('asn6question10d').value);
-const assignment6question10textf = parseFloat(document.getElementById('asn6question10e').value);
-const assignment6question10textg = parseFloat(document.getElementById('asn6question10f').value);
-
 const assignment6question10button = document.getElementById("asign6question10button");
 
 const assignment6question10output = document.getElementById('asign6question10outputa');
@@ -722,7 +675,16 @@ const assignment6question10outputc = document.getElementById('asign6question10ou
 const assignment6question10outputd = document.getElementById('asign6question10outputd');
 const assignment6question10outpute = document.getElementById('asign6question10outpute');
 
-function asign3question10(r1,r2,r3,e1,e2,e3){
+
+assignment6question10button.addEventListener('click', ()=>{
+
+  var r1 = parseFloat(document.getElementById('asn6question10a').value);
+  var r2 = parseFloat(document.getElementById('asn6question10b').value);
+  var r3 = parseFloat(document.getElementById('asn6question10c').value);
+  var e1 = parseFloat(document.getElementById('asn6question10d').value);
+  var e2 = parseFloat(document.getElementById('asn6question10e').value);
+  var e3 = parseFloat(document.getElementById('asn6question10f').value);
+
 
   r1,r2,r3,e1,e2,e3 = parseFloat(r1),parseFloat(r2),parseFloat(r3),parseFloat(e1),parseFloat(e2),parseFloat(e3); 
 
@@ -737,23 +699,21 @@ function asign3question10(r1,r2,r3,e1,e2,e3){
   assignment6question10outputc.innerHTML = "The current in I3 is: " + i3.toString() + "mA";
   assignment6question10outputd.innerHTML = "The voltage between c and f is: "+v.toString()+"V";
   assignment6question10outpute.innerHTML = "If you get one of the currents wrong, try multiplying the value by (-1), that should make it work properly.";
-};
-
-assignment6question10button.addEventListener('click', ()=>{
-  asign3question10(assignment6question10textb,assignment6question10textc,assignment6question10textd,assignment6question10texte,assignment6question10textf,assignment6question10textg);
+  
 });
 
 //For Question 11
-
-
-const assignment6question11texta = parseFloat(document.getElementById('asn6question11a').value);
-const assignment6question11textb = parseFloat(document.getElementById('asn6question11b').value);
 
 const assignment6question11button = document.getElementById("asign6question11button");
 
 const assignment6question11output = document.getElementById('asign6question11outputa');
 
-function asign3question11(r,e){
+
+assignment6question11button.addEventListener('click', ()=>{
+
+  
+  var r = parseFloat(document.getElementById('asn6question11a').value);
+  var e = parseFloat(document.getElementById('asn6question11b').value);
 
   r, e = parseFloat(r), parseFloat(e);
 
@@ -768,22 +728,9 @@ function asign3question11(r,e){
 
   assignment6question11output.innerHTML = "The current in Iae is : "+iae.toString()+" A";
 
-};
-
-assignment6question11button.addEventListener('click', ()=>{
-
-  asign3question11(assignment6question11texta,assignment6question11textb);
-
 });
 
 //For Question 12 
-
-
-const assignment6question12texta = parseFloat(document.getElementById('asn6question12a').value);
-const assignment6question12textb = parseFloat(document.getElementById('asn6question12b').value);
-const assignment6question12textc = parseFloat(document.getElementById('asn6question12c').value);
-const assignment6question12textd = parseFloat(document.getElementById('asn6question12d').value);
-const assignment6question12texte = parseFloat(document.getElementById('asn6question12e').value);
 
 const assignment6question12button = document.getElementById("asign6question12button");
 
@@ -791,8 +738,14 @@ const assignment6question12output = document.getElementById('asign6question12out
 const assignment6question12outputb = document.getElementById('asign6question12outputb');
 const assignment6question12outputc = document.getElementById('asign6question12outputc');
 
-function asign6question12(c,q1,r,t1,t2){
-  c,q1,r,t1,t2 = parseFloat(c), parseFloat(q1), parseFloat(r), parseFloat(t1),parseFloat(t2);
+
+assignment6question12button.addEventListener('click', ()=>{
+
+  var c = parseFloat(document.getElementById('asn6question12a').value);
+  var q1 = parseFloat(document.getElementById('asn6question12b').value);
+  var r = parseFloat(document.getElementById('asn6question12c').value);
+  var t1 = parseFloat(document.getElementById('asn6question12d').value);
+  var t2 = parseFloat(document.getElementById('asn6question12e').value);
 
   var x1 = q1/c
   var x2 = x1/r
@@ -809,38 +762,26 @@ function asign6question12(c,q1,r,t1,t2){
   assignment6question12output.innerHTML = "The value of current is: "+i1.toString()+" A";
   assignment6question12outputb.innerHTML = "The charge remaining is: "+q2.toString()+" C";
   assignment6question12outputc.innerHTML = "The max current is: "+i2.toString()+" A";
-};
-
-assignment6question12button.addEventListener('click', ()=>{
-
-  asign6question12(assignment6question12texta,assignment6question12textb,assignment6question12textc,assignment6question12textd,assignment6question12texte);
 
 });
 
 //FOR Question 13
-
-
-const assignment6question13texta = parseFloat(document.getElementById('asn6question12a').value);
-const assignment6question13textb = parseFloat(document.getElementById('asn6question12b').value);
-const assignment6question13textc = parseFloat(document.getElementById('asn6question12c').value);
-const assignment6question13textd = parseFloat(document.getElementById('asn6question12d').value);
-const assignment6question13texte = parseFloat(document.getElementById('asn6question12e').value);
-
 const assignment6question13button = document.getElementById("asign6question13button");
 
 const assignment6question13output = document.getElementById('asign6question13outputa');
 
-function asignment6question13(r1,r2,r3,v1,v2){
+
+assignment6question13button.addEventListener('click', ()=>{
+  var r1 = parseFloat(document.getElementById('asn6question12a').value);
+  var r2 = parseFloat(document.getElementById('asn6question12b').value);
+  var r3 = parseFloat(document.getElementById('asn6question12c').value);
+  var v1 = parseFloat(document.getElementById('asn6question12d').value);
+  var v2 = parseFloat(document.getElementById('asn6question12e').value);
   r1,r2,r3,v1,v2 = parseFloat(r1),parseFloat(r2), parseFloat(r3), parseFloat(v1), parseFloat(v2);
 
   var i = v1/(r1+r2);
   var vab = Math.abs(v2-(i*r2));
   assignment6question13output.innerHTML = "The potential difference across points a and b is: "+vab.toString()+" V";
-};
-
-assignment6question13button.addEventListener('click', ()=>{
-
-  asignment6question13(assignment6question13texta,assignment6question13textb,assignment6question13textc,assignment6question13textd,assignment6question13texte);
 
 });
 
@@ -853,8 +794,10 @@ const assignment6question14button = document.getElementById("asign6question14but
 
 const assignment6question14output = document.getElementById('asign6question14outputa');
 
-function asignment6question14(v,r,p){
-  v,r,p = parseFloat(v), parseFloat(r), parseFloat(p);
+assignment6question14button.addEventListener('click', ()=>{
+  var v = parseFloat(document.getElementById('asn6question14a').value);
+  var r = parseFloat(document.getElementById('asn6question14b').value);
+  var p = parseFloat(document.getElementById('asn6question14c').value);
 
 
   var r1 = ((v) + (Math.sqrt( ((-v)**2) -(4.0*(r)*(p)) )))/(2.0*r);
@@ -865,23 +808,20 @@ function asignment6question14(v,r,p){
   r2 = p/(r2**2);
 
   assignment6question14output.innerHTML = "The resistance values are: "+r1.toFixed(3).toString()+" and "+r2.toFixed(3).toString()+" in Ohms.";
-            
-};
-
-assignment6question14button.addEventListener('click', ()=>{
-  asignment6question14(assignment6question14texta,assignment6question14textb,assignment6question14textc);
 });
 
 //For Question 15
-const assignment6question15texta = parseFloat(document.getElementById('asn6question15a').value);
-const assignment6question15textb = parseFloat(document.getElementById('asn6question15b').value);
-const assignment6question15textc = parseFloat(document.getElementById('asn6question15c').value);
 
 const assignment6question15button = document.getElementById("asign6question15button");
 
 const assignment6question15output = document.getElementById('asign6question15outputa');
 
-function assingment6question15(c,v1,v2,t){
+assignment6question15button.addEventListener('click', ()=>{
+
+  var c = parseFloat(document.getElementById('asn6question15a').value);
+  var v1 = parseFloat(document.getElementById('asn6question15b').value);
+  var v2 = parseFloat(document.getElementById('asn6question15c').value);
+  var t = parseFloat(document.getElementById('asn6question15d').value);
 
   c,v1,v2,t = parseFloat(c), parseFloat(v1), parseFloat(v2),parseFloat(t);
   
@@ -892,29 +832,24 @@ function assingment6question15(c,v1,v2,t){
   var r=t/(c*(valLn1-valLn2));
 
   assignment6question15output.innerHTML = "The resistance value is:"+r.toString() +"Ohms.";
-
-
-};
-
-assignment6question15button.addEventListener('click', ()=>{
-  assingment6question15(assignment6question15texta,assignment6question15textb,assignment6question15textc);
 });
 
 // For Question 16
-
-const assignment6question16textc = parseFloat(document.getElementById('asn6question16a').value);
-const assignment6question16textd = parseFloat(document.getElementById('asn6question16b').value);
-const assignment6question16texte = parseFloat(document.getElementById('asn6question16c').value);
-const assignment6question16textf = parseFloat(document.getElementById('asn6question16d').value);
-const assignment6question16textg = parseFloat(document.getElementById('asn6question16e').value);
-const assignment6question16texth = parseFloat(document.getElementById('asn6question16f').value);
 
 const assignment6question16button = document.getElementById("asign6question16utton");
 
 const assignment6question16output = document.getElementById('asign6question16outputa');
 const assignment6question16outputb = document.getElementById('asign6question16outputb');
 
-function asign6question16(r1,r2,c1,c2,e,t1,t2){
+assignment6question16button.addEventListener('click', ()=>{
+
+  r1 = parseFloat(document.getElementById('asn6question16a').value);
+  r2 = parseFloat(document.getElementById('asn6question16b').value);
+  c1 = parseFloat(document.getElementById('asn6question16c').value);
+  c2 = parseFloat(document.getElementById('asn6question16d').value);
+  e = parseFloat(document.getElementById('asn6question16e').value);
+  t1 = parseFloat(document.getElementById('asn6question16f').value);
+  t2 = parseFloat(document.getElementById('asn6question16g').value);
   r1,r2,c1,c2,e,t1,t2 = parseFloat(r1),parseFloat(r2),parseFloat(c1),parseFloat(c2),parseFloat(e),parseFloat(t1),parseFloat(t2);
 
   r1,r2,c1,c2,e,t1,t2 = (1.0e3)*r1,(1.0e3)*r2,(1.0e-6)*c1,(1.0e-6)*c2,1.0*e,(1.0e-3)*t1,(1.0e-3)*t2;
@@ -927,12 +862,4 @@ function asign6question16(r1,r2,c1,c2,e,t1,t2){
   
   assignment6question16output.innerHTML ="The value of the charge q1 on capacitor C1 is: "+q1.toString()+" C";
   assignment6question16outputb.innerHTML = "The value of the charge q2 on capacitor C2 is: "+q2.toString()+" C" ;
-
-};
-
-assignment6question16button.addEventListener('click', ()=>{
-
-  
-  asign6question16(assignment6question16textc,assignment6question16textd,assignment6question16texte,assignment6question16textf,assignment6question16textg,assignment6question16texth);
-
 });
