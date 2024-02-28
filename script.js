@@ -596,7 +596,7 @@ assignment6question7button.addEventListener('click',()=>{
   var R = parseFloat(document.getElementById('asn6question7').value);
 
   let r = R*(((2**0.5)-1)/(1-((2**0.5)/2)));
-  assignment6question7output.innerHTML = "The value of R' is: " + r.toString();
+  assignment6question7output.innerHTML = "The value of R' is: " + r.toString() + " Ohms";
 
 });
 
@@ -649,14 +649,21 @@ assignment6question9button.addEventListener('click', ()=>{
   var s = parseFloat(document.getElementById('asn6question9a').value);
   var p = parseFloat(document.getElementById('asn6question9b').value);
 
-  s,p = parseFloat(s), parseFloat(p);
-  s,p=1.0*s,1.0*p;
-  var r1 = ((-s) + (sqrt((s**2)-(4.0*(-1.0)*((-s)*p)))))/(-2.0);
-  var r2 = ((-s) - (sqrt((s**2)-(4.0*(-1.0)*((-s)*p)))))/(-2.0);
-  assignment6question9output.innerHTML = "The resistance of resistor 1 is" + r1.toString();
-  assignment6question9output.innerHTML = "The resistance of resister 2 is" + r2.toString();
+  console.log((s*s)-(4.0*(-1.0)*((-s)*p)));
+  var r1 = (-s) + Math.sqrt((s*s)-(4.0*(-1.0)*((-s)*p)));
+  r1 = r1/(-2);
 
-  asignment6question9(assignment6question9textd,assignment6question9texte);
+  console.log(r1);
+
+  var r2 = (-s) - Math.sqrt((s*s)-(4.0*(-1.0)*((-s)*p)));
+  r2 = r2/(-2);
+  console.log(r2);
+
+
+
+  assignment6question9output.innerHTML = "The resistance of resistor 1 is " + r1.toString() + " ohms";
+  assignment6question9outputb.innerHTML = "The resistance of resister 2 is " + r2.toString() + " ohms";
+
 
 });
 
@@ -680,19 +687,19 @@ assignment6question10button.addEventListener('click', ()=>{
   var e3 = parseFloat(document.getElementById('asn6question10f').value);
 
 
-  r1,r2,r3,e1,e2,e3 = parseFloat(r1),parseFloat(r2),parseFloat(r3),parseFloat(e1),parseFloat(e2),parseFloat(e3); 
+  var v = (((e1/r1)+(e2/r2)+(e3/r3))/((1.0/r1)+(1.0/r2)+(1.0/r3)));
 
-  var v = (((e1/r1)+(e2/r2)+(e3/r3))/((1.0/r1)+(1.0/r2)+(1.0/r3)))
+  var i1 = ((e1-v)/r1);
+  var i2 = ((e2-v)/r2);
+  var i3 = ((e3-v)/r3);
 
-  var i1 = ((e1-v)/r1)
-  var i2 = ((e2-v)/r2)
-  var i3 = ((e3-v)/r3)
   
-  assignment6question10output.innerHTML = "The current in I1 is: "+i1.toString()+"mA";
-  assignment6question10outputb.innerHTML ="The current in I2 is: "+i2.toString()+"mA";
-  assignment6question10outputc.innerHTML = "The current in I3 is: " + i3.toString() + "mA";
+  assignment6question10output.innerHTML = "The current in I1 is: "+i1.toString()+" mA";
+  assignment6question10outputb.innerHTML ="The current in I2 is: "+i2.toString()+" mA";
+  assignment6question10outputc.innerHTML = "The current in I3 is: " + i3.toString() + " mA";
   assignment6question10outputd.innerHTML = "The voltage between c and f is: "+v.toString()+"V";
-  assignment6question10outpute.innerHTML = "If you get one of the currents wrong, try multiplying the value by (-1), that should make it work properly.";
+  let final_content =  "If you get one of the currents wrong, try multiplying the value by (-1), that should make it work properly.";
+  assignment6question10outpute.innerHTML = final_content.bold();
   
 });
 
@@ -709,9 +716,11 @@ assignment6question11button.addEventListener('click', ()=>{
   var r = parseFloat(document.getElementById('asn6question11a').value);
   var e = parseFloat(document.getElementById('asn6question11b').value);
 
-  r, e = parseFloat(r), parseFloat(e);
+  var a = (1.71*r*e)-(2.71*r*2*e);
+  var b = (1.71*r*1.71*r)-(2.71*r*3.71*r);
 
-  var i2 = ((1.71*r*e)-(2.71*r*2*e))/((1.71*r*1.71*r)-(2.71*r*3.71*r));
+
+  var i2 = a/b;
   var i1 = (e - (1.71*r*i2))/(2.71*r);
 
   var v = ((i1+i2)*(1.71*r));
