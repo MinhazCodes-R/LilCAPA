@@ -776,25 +776,20 @@ const assignment6question13output = document.getElementById('asign6question13out
 
 
 assignment6question13button.addEventListener('click', ()=>{
-  var r1 = parseFloat(document.getElementById('asn6question5a').value);
+  var r1 = parseFloat(document.getElementById('asn6question13a').value);
   var r2 = parseFloat(document.getElementById('asn6question13b').value);
   var r3 = parseFloat(document.getElementById('asn6question13c').value);
   var v1 = parseFloat(document.getElementById('asn6question13d').value);
   var v2 = parseFloat(document.getElementById('asn6question13e').value);
 
-  r1,r2,r3,v1,v2 = 1.0*r1,1.0*r2,1.0*r3,1.0*v1,1.0*v2;
-
-  var i = v1/(r1+r2);
-  var vab = Math.abs(v2-(i*r2));
+  i = v1/(r1+r2);
+  vab = Math.abs(v2-(i*r2));
 
   assignment6question13output.innerHTML = "The potential difference across points a and b is: "+ vab.toString()+" V";
 
 });
 
 //For Question 14
-const assignment6question14texta = parseFloat(document.getElementById('asn6question14a').value);
-const assignment6question14textb = parseFloat(document.getElementById('asn6question14b').value);
-const assignment6question14textc = parseFloat(document.getElementById('asn6question14c').value);
 
 const assignment6question14button = document.getElementById("asign6question14button");
 
@@ -810,10 +805,16 @@ assignment6question14button.addEventListener('click', ()=>{
   var r2 = ((v) - (Math.sqrt( ((-v)**2) -(4.0*(r)*(p)) )))/(2.0*r);
 
 
-  r1 = p/(r1**2);
-  r2 = p/(r2**2);
+  r1 = p/(r1*r1);
+  r2 = p/(r2*r2);
 
-  assignment6question14output.innerHTML = "The resistance values are: "+r1.toFixed(3).toString()+" and "+r2.toFixed(3).toString()+" in Ohms.";
+  if (r1>r2){
+    assignment6question14output.innerHTML = "The resistance values are: " + r1.toString()+" and " + r2.toString()+" in Ohms.";
+  }
+  else{
+
+    assignment6question14output.innerHTML = "The resistance values are: " + r2.toString()+" and " + r1.toString()+" in Ohms.";
+  }
 });
 
 //For Question 15
@@ -825,19 +826,18 @@ const assignment6question15output = document.getElementById('asign6question15out
 assignment6question15button.addEventListener('click', ()=>{
 
   var c = parseFloat(document.getElementById('asn6question15a').value);
+  c = c*(1/1000000);
   var v1 = parseFloat(document.getElementById('asn6question15b').value);
   var v2 = parseFloat(document.getElementById('asn6question15c').value);
   var t = parseFloat(document.getElementById('asn6question15d').value);
 
-  c,v1,v2,t = parseFloat(c), parseFloat(v1), parseFloat(v2),parseFloat(t);
-  
   var valLn1 = Math.log(v1);
 
   var valLn2 = Math.log(v1-v2);
 
   var r=t/(c*(valLn1-valLn2));
 
-  assignment6question15output.innerHTML = "The resistance value is:"+r.toString() +"Ohms.";
+  assignment6question15output.innerHTML = "The resistance value is: "+r.toString() +" Ohms.";
 });
 
 // For Question 16
