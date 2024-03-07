@@ -849,22 +849,36 @@ const assignment6question16outputb = document.getElementById('asign6question16ou
 
 assignment6question16button.addEventListener('click', ()=>{
 
-  r1 = parseFloat(document.getElementById('asn6question16a').value);
-  r2 = parseFloat(document.getElementById('asn6question16b').value);
-  c1 = parseFloat(document.getElementById('asn6question16c').value);
-  c2 = parseFloat(document.getElementById('asn6question16d').value);
-  e = parseFloat(document.getElementById('asn6question16e').value);
-  t1 = parseFloat(document.getElementById('asn6question16f').value);
-  t2 = parseFloat(document.getElementById('asn6question16g').value);
-  r1,r2,c1,c2,e,t1,t2 = parseFloat(r1),parseFloat(r2),parseFloat(c1),parseFloat(c2),parseFloat(e),parseFloat(t1),parseFloat(t2);
+  var r1 = parseFloat(document.getElementById('asn6question16a').value);
+  var r2 = parseFloat(document.getElementById('asn6question16b').value);
+  var c1 = parseFloat(document.getElementById('asn6question16c').value);
+  var c2 = parseFloat(document.getElementById('asn6question16d').value);
+  var e = parseFloat(document.getElementById('asn6question16e').value);
+  var t1 = parseFloat(document.getElementById('asn6question16f').value);
+  var t2 = parseFloat(document.getElementById('asn6question16g').value);
+  
+  r1 = (1000)*r1;
+  r2 = (1000)*r2;
+  c1 = (1/1000000)*c1;
+  c2 = (1/1000000)*c2;
+  e = e * 1.0;
+  t1 = t1 * (1/1000);
+  t2 = t2 * (1/1000);
 
-  r1,r2,c1,c2,e,t1,t2 = (1.0e3)*r1,(1.0e3)*r2,(1.0e-6)*c1,(1.0e-6)*c2,1.0*e,(1.0e-3)*t1,(1.0e-3)*t2;
+  console.log(r1);
+  console.log(r2);
+  console.log(c1);
+  console.log(c2);
+  console.log(e);
+  console.log(t1);
+  console.log(t2);
 
   ct = c1+c2;
-  rt = 1.0/((1.0/r1) + (1.0/r2));
+  rt = (1.0/r1) + (1.0/r2);
+  rt = 1/rt;
 
-  q1 = (c1*e*(1.0-Math.exp((-1.0*t1)/(rt*ct))));
-  q2 = (c2*e*(1.0-Math.exp((-1.0*t2)/(rt*ct))));
+  var q1 = (c1*e*(1.0-Math.exp((-1.0*t1)/(rt*ct))));
+  var q2 = (c2*e*(1.0-Math.exp((-1.0*t2)/(rt*ct))));
   
   assignment6question16output.innerHTML ="The value of the charge q1 on capacitor C1 is: "+q1.toString()+" C";
   assignment6question16outputb.innerHTML = "The value of the charge q2 on capacitor C2 is: "+q2.toString()+" C" ;
