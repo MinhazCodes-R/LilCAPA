@@ -1,4 +1,5 @@
 //NOTES:
+// Update 2024 03 7
 // I mixed up assignment 3 and 5 so all names with assignment3 are actually 5 and all
 // names with assignment 5 are actually 3
 //If changes are made in the code then please edit this
@@ -556,7 +557,7 @@ assignment6question5button.addEventListener('click', () =>{
   let fin = Math.abs((e1*r6+e1*r7+e4*r1+e4*r2+e4*r3+e4*r6+e4*r7-e6*r1-e6*r2-e6*r3)/(r1*r4+r1*r5+r1*r6+r1*r7+r1*r8+r2*r4+r2*r5+r2*r6+r2*r7+r2*r8+r3*r4+r3*r5+r3*r6+r3*r7+r3*r8+r4*r6+r4*r7+r5*r6+r5*r7+r6*r8+r7*r8));
    
   assignment6question5output.innerHTML = "The potential difference of Vab is: "+vab.toString()+"V";
-  assignment6question5outputb.innerHTML = 'The current through r8 is: '+ fin.toString();
+  assignment6question5outputb.innerHTML = 'The current through r8 is: '+ fin.toString() + ' A';
 
 });
 
@@ -714,7 +715,7 @@ assignment6question11button.addEventListener('click', ()=>{
 
   
   var r = parseFloat(document.getElementById('asn6question11a').value);
-  var e = parseFloat(document.getElementById('asn6question11b').value);
+  var e = parseFloat(document.getElementById('asn6question11b').value);asign6question12button
 
   var a = (1.71*r*e)-(2.71*r*2*e);
   var b = (1.71*r*1.71*r)-(2.71*r*3.71*r);
@@ -763,7 +764,7 @@ assignment6question12button.addEventListener('click', ()=>{
   var i2 = ((q1/c)/r)
 
   assignment6question12output.innerHTML = "The value of current is: "+i1.toString()+" A";
-  assignment6question12outputb.innerHTML = "The charge remaining is: "+q2.toString()+" C";
+  assignment6question12outputb.innerHTML = "The charge remaining is: "+q2.toString()+" uC";
   assignment6question12outputc.innerHTML = "The max current is: "+i2.toString()+" A";
 
 });
@@ -775,7 +776,7 @@ const assignment6question13output = document.getElementById('asign6question13out
 
 
 assignment6question13button.addEventListener('click', ()=>{
-  var r1 = parseFloat(document.getElementById('asn6question13a').value);
+  var r1 = parseFloat(document.getElementById('asn6question5a').value);
   var r2 = parseFloat(document.getElementById('asn6question13b').value);
   var r3 = parseFloat(document.getElementById('asn6question13c').value);
   var v1 = parseFloat(document.getElementById('asn6question13d').value);
