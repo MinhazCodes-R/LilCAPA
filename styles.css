@@ -1,4 +1,6 @@
 /* basic Styling */
+/* Update 2024 03 7 */
+
 .choicetitle{
   color: rgb(44, 122, 40);
 }
@@ -215,3 +217,12 @@
   .active[data-taba6-content]{
     display: block;
   }
+
+
+
+[data-taba7-content]{
+  display:none;
+}
+.active[data-taba7-content]{
+  display:block;
+}

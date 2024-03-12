@@ -865,13 +865,6 @@ assignment6question16button.addEventListener('click', ()=>{
   t1 = t1 * (1/1000);
   t2 = t2 * (1/1000);
 
-  console.log(r1);
-  console.log(r2);
-  console.log(c1);
-  console.log(c2);
-  console.log(e);
-  console.log(t1);
-  console.log(t2);
 
   ct = c1+c2;
   rt = (1.0/r1) + (1.0/r2);
@@ -882,4 +875,324 @@ assignment6question16button.addEventListener('click', ()=>{
   
   assignment6question16output.innerHTML ="The value of the charge q1 on capacitor C1 is: "+q1.toString()+" C";
   assignment6question16outputb.innerHTML = "The value of the charge q2 on capacitor C2 is: "+q2.toString()+" C" ;
+});
+
+
+//Start of Assignment 7
+//creating tab functionaility
+const taba7 = document.querySelectorAll('[data-taba7-target]');
+const taba7contents = document.querySelectorAll('[data-taba7-content]');
+
+taba7.forEach(tab => {
+  tab.addEventListener('click', ()=>{
+
+    const target = document.querySelector(tab.dataset.taba7Target);
+    console.log(target);
+
+
+    taba7contents.forEach(tabcontent => {tabcontent.classList.remove('active');});//removing all active from the taba3contents
+
+    taba7.forEach(tab2 =>{tab2.classList.remove('active');});//removing all active from taba3
+
+
+    tab.classList.add('active');
+    target.classList.add('active');
+
+  });
+});
+
+
+//Question 1
+
+
+
+const assignment7question1button = document.getElementById("asn7question1button");
+
+const assignment7question1output = document.getElementById('asn7question1outputa');
+const assignment7question1outputb = document.getElementById('asn7question1outputb');
+
+assignment7question1button.addEventListener('click', ()=>{
+
+  var v = parseFloat(document.getElementById('asn7question1a').value);
+  var a = parseFloat(document.getElementById('asn7question1b').value);
+  var E = parseFloat(document.getElementById('asn7question1c').value);
+
+  var q = 1.6*10**(-19);
+  var m = 9.11*10**(-31);
+  var X = -q*E;
+  var Y = m*a;
+  var Z = q*v;
+
+  var By = (X-Y)/Z;
+
+  assignment7question1output.innerHTML = "the y component of the magnectic field in the region is " + By.toString() + "T";
+  assignment7question1outputb.innerHTML = "the z component of the magnetic field in the region is 0 T ";
+
+});
+
+//Question 2
+
+const assignment7question2button = document.getElementById("asn7question2button");
+
+const assignment7question2output = document.getElementById('asn7question1outputa');
+const assignment7question2outputb = document.getElementById('asn7question1outputb');
+const assignment7question2outputc = document.getElementById('asn7question1outputc');
+const assignment7question2outputd = document.getElementById('asn7question1outputd');
+
+assignment7question2button.addEventListener('click', ()=>{
+
+  var L = parseFloat(document.getElementById('asn7question2a').value)/100;
+  var I = parseFloat(document.getElementById('asn7question2b').value);
+  var B = parseFloat(document.getElementById('asn7question2c').value);
+  var H = Math.sqrt(L**2 + L**2);
+  var S = Math.sin(Math.PI/4);
+  var F_ab = 0;
+  var F_bc = I*L*B;
+  var F_cd = I*H*B*S;
+  var F_da = I*H*B;
+
+  assignment7question2output.innerHTML = "the force on segment ab is : " + F_ab.toString() + "N";
+  assignment7question2outputb.innerHTML = "the force on segment bc is : " + F_bc.toString() + "N";
+  assignment7question2outputc.innerHTML = "the force on segment cd is : " + F_cd .toString()+ "N";
+  assignment7question2outputd.innerHTML = "the force on segment da is : " + F_da.toString()+ "N";
+
+});
+
+//Question 3
+
+
+const assignment7question3button = document.getElementById("asn7question3button");
+
+const assignment7question3output = document.getElementById('asn7question3outputa');
+const assignment7question3outputb = document.getElementById('asn7question3outputb');
+
+
+assignment7question3button.addEventListener('click', ()=>{
+
+  var M = parseFloat(document.getElementById('asn7question3a').value);
+  var L = parseFloat(document.getElementById('asn7question3b').value);
+  var N = parseFloat(document.getElementById('asn7question3c').value);
+  var I = parseFloat(document.getElementById('asn7question3d').value);
+  var B = parseFloat(document.getElementById('asn7question3e').value);
+
+  var G = 9.8;
+  var S = L/(N*4);
+  var A = S**2;
+  var X = M*G*(S/2);
+  var Y = N*I*A*B;
+  var theta = Math.atan(X/Y);
+
+  // If there are any calculation errors it could be because of the radians to 
+  //degree conversion
+
+  theta = theta*180/(Math.PI);
+  var phi = 90-theta;
+  var D = theta*180/(Math.PI);
+  var F = Math.sin(D);
+  var T = N*I*A*B*F
+
+  assignment7question3output.innerHTML = "the angle between the plane and the vertical is: " + phi.toString() + "degrees";
+  assignment7question3outputb.innerHTML = "the torque acting on the coil due to the magnetic field is: " + T.toString() + "N";
+
+});
+
+//For Question 4
+
+
+const assignment7question4button = document.getElementById("asn7question4button");
+
+const assignment7question4output = document.getElementById('asn7question4outputa');
+const assignment7question4outputb = document.getElementById('asn7question4outputb');
+
+
+assignment7question4button.addEventListener('click', ()=>{
+
+  var V = parseFloat(document.getElementById('asn7question4a').value);
+  var B = parseFloat(document.getElementById('asn7question4b').value);
+  var M1 = 238.0*1.66 /(10**27);
+  var M2 = 235*1.66/(10**27);
+  var q = 1.6/(10**19);
+  var X1 = (2*q*V)/M1;
+  var X2 = (2*q*V)/M2;
+  var V1 = Math.sqrt(X1);
+  var V2 = Math.sqrt(X2);
+  var r1 = (M1*V1)/(q*B);
+  var r2 = (M2*V2)/(q*B);
+
+  console.log(r1);
+  console.log(r2);
+
+  assignment7question4output.innerHTML = "the radius of the circular path for the uranium-238 atom is: " + r1.toString() + "meters";
+  assignment7question4outputb.innerHTML = "the radies of the circular path for the uranium 235 atom is: " + r2.toString() + "meters";
+
+});
+
+//Question 5
+
+const assignment7question5button = document.getElementById("asn7question5button");
+
+
+const assignment7question5outputa = document.getElementById("asn7question5outputa");
+assignment7question5button.addEventListener("click", ()=>{
+
+
+	var E = parseFloat(document.getElementById("asn7question5a").value);
+	var B = parseFloat(document.getElementById("asn7question5b").value);
+
+  var q = 1.6/(10**19);
+  var K = E*q;
+  var M = 1.67/(10**27);
+  var X = (2*K)/M;
+  var V = Math.sqrt(X);
+  var R = (M*V)/(q*B)
+
+	assignment7question5outputa.innerHTML = " the required radius of the cyclotron is: " , R.toString() , "meters";
+
+
+});
+//for question 6
+const assignment7question6button = document.getElementById("asn7question6button");
+
+
+const assignment7question6outputa = document.getElementById("asn7question6outputa");
+const assignment7question6outputb = document.getElementById("asn7question6outputb");
+
+
+assignment7question6button.addEventListener("click", ()=>{
+
+
+	var I = parseFloat(document.getElementById("asn7question6a").value);
+	var B1 = parseFloat(document.getElementById("asn7question6b").value);
+	var V1  = parseFloat(document.getElementById("asn7question6c").value);
+	var V2 = parseFloat(document.getElementById("asn7question6d").value);
+	var D = parseFloat(document.getElementById("asn7question6e").value);
+  
+  var q = 1.6/(10**19);
+  var X = (V2/V1);
+  var B2 = X*B1;
+  var N = (I*B1)/(V1*q*D);
+
+
+	assignment7question6outputa.innerHTML = "the magnitude of the unknown field is: " + B2.toString() +  "T";
+	assignment7question6outputb.innerHTML = "the charge carrier density is : " + N.toString() + "m^-3";
+
+
+});
+
+//For question 7
+
+const assignment7question7button = document.getElementById("asn7question7button");
+
+
+const assignment7question7outputa = document.getElementById("asn7question7outputa");
+const assignment7question7outputb = document.getElementById("asn7question7outputb");
+
+
+assignment7question7button.addEventListener("click", ()=>{
+
+
+	var E = parseFloat(document.getElementById("asn7question7a").value);
+  var q = 1.6/(10**19);
+  E = E*q;
+  var M = 1.67/(10**27);
+
+	var A = parseFloat(document.getElementById("asn7question7b").value);
+	var B = parseFloat(document.getElementById("asn7question7c").value);
+
+  var S = A*180/(Math.PI);
+
+	assignment7question7outputa.innerHTML = "the distance x is: " + R.toString() +"meters";
+	assignment7question7outputb.innerHTML = "the entry and exit angles are the same";
+
+
+});
+
+//question 8
+
+const assignment7question8button = document.getElementById("asn7question8button");
+
+
+const assignment7question8outputa = document.getElementById("asn7question8outputa");
+
+
+assignment7question8button.addEventListener("click", ()=>{
+
+
+	var T = parseFloat(document.getElementById("asn7question8a").value);
+	var A = parseFloat(document.getElementById("asn7question8b").value);
+  D = A*180/(Math.PI);
+  F = Math.sin(D);
+
+	var B = parseFloat(document.getElementById("asn7question8c").value);
+
+  U = F/(B*F);
+
+	assignment7question8outputa.innerHTML = " the magnitude of its magnetic dipole moment is : " + U.toString() + "N*m/T";
+
+
+});
+
+//For Question 9
+
+const assignment7question9button = document.getElementById("asn7question9button");
+
+
+const assignment7question9outputa = document.getElementById("asn7question9outputa");
+const assignment7question9outputb = document.getElementById("asn7question9outputb");
+const assignment7question9outputc = document.getElementById("asn7question9outputc");
+
+
+assignment7question9button.addEventListener("click", ()=>{
+
+
+	var B = parseFloat(document.getElementById("asn7question9a").value);
+	var R = parseFloat(document.getElementById("asn7question9b").value);
+
+  var q = 1.6/(10**19);
+  var u = 1.66/(10**27);
+
+  var M1 = 28*u;
+  var M2 = 32*u;
+  var M3 = 28*u;
+  var X1 = 2*M1;
+  var X2 =  2*M2;
+  var X3 = 2*M3;
+  var X = (B**2)*(R**2)*(q);
+  var V1 = X / X1;
+  var V2 = X / X2;
+  var V3 = X / X3;
+
+
+	assignment7question9outputa.innerHTML = " the potential differene required for N2+ is : " + V1.toString() + " V";
+	assignment7question9outputb.innerHTML = " the potential differene required for N2+ is : " +  V2.toString() + " V";
+	assignment7question9outputc.innerHTML = " the potential differene required for N2+ is : " + V3.toString()+ " V" ;
+
+
+});
+
+//for question 10
+
+const assignment7question10button = document.getElementById("asn7question10button");
+
+
+const assignment7question10outputa = document.getElementById("asn7question10outputa");
+
+
+assignment7question10button.addEventListener("click", ()=>{
+
+
+	var L = parseFloat(document.getElementById("asn7question10a").value);
+	var W = parseFloat(document.getElementById("asn7question10b").value);
+	var I = parseFloat(document.getElementById("asn7question10c").value);
+	var M = parseFloat(document.getElementById("asn7question10d").value);
+	var N = parseFloat(document.getElementById("asn7question10e").value);
+
+  var G = 9.8;
+  var A = L*W;
+  var B = (M*G*W) / ( 2*N*I*A);
+
+
+	assignment7question10outputa.innerHTML = "The required magnetic field strength is: " + B.toString() + "T";
+
+
 });
