@@ -1,0 +1,18 @@
+const assignment7question10button = document.getElementById("asn7question10button");
+
+
+const assignment7question10outputa = document.getElementById("asn7question10outputa");
+
+
+assignment7question10button.addEventListener("click", ()=>{
+
+
+	var A = parseFloat(document.getElementById("asn7question10a").value);
+	var A = parseFloat(document.getElementById("asn7question10b").value);
+	var A = parseFloat(document.getElementById("asn7question10c").value);
+	var A = parseFloat(document.getElementById("asn7question10d").value);
+	var A = parseFloat(document.getElementById("asn7question10e").value);
+	assignment7question10outputa.innerHTML = ;
+
+
+});

@@ -1,0 +1,15 @@
+<div id="assignmentsev10" data-taba7-content>
+
+	<p><input type="text" placeholder="Enter Here" id="asn7question10a" maxlength="10"></p>
+	<p><input type="text" placeholder="Enter Here" id="asn7question10b" maxlength="10"></p>
+	<p><input type="text" placeholder="Enter Here" id="asn7question10c" maxlength="10"></p>
+	<p><input type="text" placeholder="Enter Here" id="asn7question10d" maxlength="10"></p>
+	<p><input type="text" placeholder="Enter Here" id="asn7question10e" maxlength="10"></p>
+
+
+	<input type="button" id="asn7question10button" style="width:100px; height:20px;" value="SOLVE NOW">
+
+	<p class="asign7output" id="asn7question10outputa"></p>
+
+
+</div>
