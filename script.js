@@ -934,10 +934,10 @@ assignment7question1button.addEventListener('click', ()=>{
 
 const assignment7question2button = document.getElementById("asn7question2button");
 
-const assignment7question2output = document.getElementById('asn7question1outputa');
-const assignment7question2outputb = document.getElementById('asn7question1outputb');
-const assignment7question2outputc = document.getElementById('asn7question1outputc');
-const assignment7question2outputd = document.getElementById('asn7question1outputd');
+const assignment7question2output = document.getElementById('asn7question2outputa');
+const assignment7question2outputb = document.getElementById('asn7question2outputb');
+const assignment7question2outputc = document.getElementById('asn7question2outputc');
+const assignment7question2outputd = document.getElementById('asn7question2outputd');
 
 assignment7question2button.addEventListener('click', ()=>{
 
