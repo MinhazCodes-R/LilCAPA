@@ -82,20 +82,20 @@
 
   .taba1{
     cursor: pointer;
-    padding-top:10px;
+    padding-top:20px;
     padding-right:50px;
     padding-left:50px;
-    padding-bottom:10px;
+    padding-bottom:20px;
   }
 
   .taba2 {
     display: flex;
     justify-content: start;
     cursor: pointer;
-    padding-top:10px;
+    padding-top:20px;
     padding-right:50px;
     padding-left:50px;
-    padding-bottom:10px;
+    padding-bottom:20px;
   }
 
   .taba3 {
@@ -224,5 +224,13 @@
   display:none;
 }
 .active[data-taba7-content]{
+  display:block;
+}
+
+
+[data-taba8-content]{
+  display:none;
+}
+.active[data-taba8-content]{
   display:block;
 }

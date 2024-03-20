@@ -1196,3 +1196,283 @@ assignment7question10button.addEventListener("click", ()=>{
 
 
 });
+
+
+//For Assignment 8
+
+//For Tabs
+
+const taba8 = document.querySelectorAll('[data-taba8-target]');
+const taba8contents = document.querySelectorAll('[data-taba8-content]');
+
+taba8.forEach(tab => {
+  tab.addEventListener('click', ()=>{
+
+    const target = document.querySelector(tab.dataset.taba8Target);
+
+    taba8contents.forEach(tabcontent => {tabcontent.classList.remove('active');});//removing all active from the taba3contents
+
+    taba8.forEach(tab2 =>{tab2.classList.remove('active');});//removing all active from taba3
+
+
+    tab.classList.add('active');
+    target.classList.add('active');
+
+  });
+});
+
+//
+let U = (Math.PI*4*10**(-7));
+//Question 1
+
+const assignment8question1button = document.getElementById("asn8question1button");
+
+
+const assignment8question1outputa = document.getElementById("asn8question1outputa");
+
+
+assignment8question1button.addEventListener("click", ()=>{
+
+
+	var A = parseFloat(document.getElementById("asn8question1a").value);
+	var B = parseFloat(document.getElementById("asn8question1b").value);
+	var I = parseFloat(document.getElementById("asn8question1c").value);
+	var O = parseFloat(document.getElementById("asn8question1d").value);
+
+  O = 0.0174533*O;
+  let X = (U*I*O) / (4*Math.PI);
+  let Y = (1/A) - (1/B);
+
+  let M = X*Y;
+
+	assignment8question1outputa.innerHTML = "the magnitude of B at P is: " + M.toString() + "T";
+
+
+});
+
+const assignment8question2button = document.getElementById("asn8question2button");
+
+
+const assignment8question2outputa = document.getElementById("asn8question2outputa");
+const assignment8question2outputb = document.getElementById("asn8question2outputb");
+const assignment8question2outputc = document.getElementById("asn8question2outputc");
+
+
+assignment8question2button.addEventListener("click", ()=>{
+
+
+	var I = parseFloat(document.getElementById("asn8question2a").value);
+	var A = parseFloat(document.getElementById("asn8question2b").value)/100;
+
+  let B2 = (U*I) / (4*Math.PI*A);
+  let B3 = (U*I) / (6*Math.PI*A);
+  console.log(B2);
+  console.log(B3);
+  let B1 = B2 + B2 + B3;
+
+	assignment8question2outputa.innerHTML = "the magnetic field at point a is: " + B1.toString() + "T";
+	assignment8question2outputb.innerHTML = "the magnetic field at point b is: " + B2.toString() + "T";
+	assignment8question2outputc.innerHTML = "the magnitude of the field at C is 0 T";
+
+
+});
+
+const assignment8question3button = document.getElementById("asn8question3button");
+
+
+const assignment8question3outputa = document.getElementById("asn8question3outputa");
+const assignment8question3outputb = document.getElementById("asn8question3outputb");
+
+
+assignment8question3button.addEventListener("click", ()=>{
+
+
+	var I1 = parseFloat(document.getElementById("asn8question3a").value);
+	var I2 = parseFloat(document.getElementById("asn8question3b").value);
+	var R= parseFloat(document.getElementById("asn8question3c").value)/1000;
+
+
+  let I3 = I2 - I1;
+
+  let B1 = (U*I1) / (2*Math.PI*R);
+  let B2 = (U*I3) / (6*Math.PI*R);
+
+	assignment8question3outputa.innerHTML = "the magnitude of the magnetic field at a is : " + B1.toString() + "T";
+	assignment8question3outputb.innerHTML = "the magnitude of the magnetic field at b is : " + B2.toString() + "T";
+
+});
+
+const assignment8question4button = document.getElementById("asn8question4button");
+
+
+const assignment8question4outputa = document.getElementById("asn8question4outputa");
+const assignment8question4outputb = document.getElementById("asn8question4outputb");
+const assignment8question4outputc = document.getElementById("asn8question4outputc");
+const assignment8question4outputd = document.getElementById("asn8question4outputd");
+
+
+assignment8question4button.addEventListener("click", ()=>{
+
+
+	var B1 = parseFloat(document.getElementById("asn8question4a").value);
+	var D1 = parseFloat(document.getElementById("asn8question4b").value);
+	var B2 = parseFloat(document.getElementById("asn8question4c").value);
+	var I = parseFloat(document.getElementById("asn8question4d").value);
+	var D = parseFloat(document.getElementById("asn8question4e").value);
+	var R = parseFloat(document.getElementById("asn8question4f").value);
+	var R4 = parseFloat(document.getElementById("asn8question4g,").value);
+
+
+  let R1 = R - D;
+  let R2 = R + D;
+  let X = (U*I) / (2*Math.PI);
+  let Y = (1/R1) - (1/R2);
+
+  let B3 = X*Y;
+  
+
+  B2 = B2/1.0;
+  D1 = D1/100.0;
+  let ratio = B1 / B2;
+
+  let D2 = ratio * D1;
+  let D3 = Math.sqrt(R4) * R;
+  
+	assignment8question4outputa.innerHTML = "at this distance" + D2.toString()+ "m" , "the field is " + B2.toString()+ "T";
+	assignment8question4outputb.innerHTML = "the magnetic field from the middle of the cord is : " + B3.toString() + "T";
+	assignment8question4outputc.innerHTML = "the distance at which the field is" + R4.toString() + "as large is : "+ D3.toString() + "m";
+  assignment8question4outputd.innerHTML = "the magnetic field outside of coaxial cable is: " + "0" + "T";
+
+
+});
+
+//Many Questionare are Skippedas they are not on the python script
+
+const assignment8question5button = document.getElementById("asn8question5button");
+
+
+const assignment8question5outputa = document.getElementById("asn8question5outputa");
+const assignment8question5outputb = document.getElementById("asn8question5outputb");
+
+
+assignment8question5button.addEventListener("click", ()=>{
+
+
+	var R = parseFloat(document.getElementById("asn8question5a").value);
+	var I = parseFloat(document.getElementById("asn8question5b").value);
+
+  let r = R / 2
+  let A = Math.PI*(R**2)
+  let J = I / A
+  let B = (U*J*r)/ 2
+  let R1 = (U*I) / (B*2*Math.PI)
+  let r1 = R1 - R
+
+	assignment8question5outputa.innerHTML = "the magnetic field at radius/2 is " + B.toString() + "T";
+	assignment8question5outputb.innerHTML = "the distance from the surface is : " +r1.toString() + "m";
+
+
+});
+
+const assignment8question6button = document.getElementById("asn8question6button");
+
+
+const assignment8question6outputa = document.getElementById("asn8question6outputa");
+const assignment8question6outputb = document.getElementById("asn8question6outputb");
+
+
+assignment8question6button.addEventListener("click", ()=>{
+
+
+	var D = parseFloat(document.getElementById("asn8question6a").value);
+	var L = parseFloat(document.getElementById("asn8question6b").value);
+	var I = parseFloat(document.getElementById("asn8question6c").value);
+	var N = parseFloat(document.getElementById("asn8question6d").value);
+	var R = parseFloat(document.getElementById("asn8question6e").value);
+	var R1 = parseFloat(document.getElementById("asn8question6f").value)/100;
+	var R2 = parseFloat(document.getElementById("asn8question6g,").value)/100;
+
+  
+  let r = D / 2.0;
+  let A = Math.PI*(r**2);
+  let X = (R2**2) - (R1**2);
+  let A1 = X*Math.PI;
+  let B = (U*I*N) / (L);
+  
+
+  let flux = B*A;
+  let flux2 = B*A1;
+  
+	assignment8question6outputa.innerHTML = "the flux through the surface of the disk is: " + flux.toString()+"Wb";
+	assignment8question6outputb.innerHTML = "the flux through the annulus is: " + flux2.toString()+ "Wb";
+
+
+});
+
+const assignment8question7button = document.getElementById("asn8question7button");
+
+
+const assignment8question7outputa = document.getElementById("asn8question7outputa");
+
+
+assignment8question7button.addEventListener("click", ()=>{
+
+
+	var R  = parseFloat(document.getElementById("asn8question7a").value)/100;
+	var Q = parseFloat(document.getElementById("asn8question7b").value);
+	var W = parseFloat(document.getElementById("asn8question7c").value);
+
+  let A = Math.PI*(R**2);
+  let I = (Q*W) / (2*math.pi);
+  let Mo = I*A;
+
+	assignment8question7outputa.innerHTML = "the magnetic moment of the ring is: " + Mo.toString() + "A*m^2";
+
+
+});
+
+const assignment8question8button = document.getElementById("asn8question8button");
+
+
+const assignment8question8outputa = document.getElementById("asn8question8outputa");
+
+
+assignment8question8button.addEventListener("click", ()=>{
+
+
+	var N  = parseFloat(document.getElementById("asn8question8a").value);
+	var R = parseFloat(document.getElementById("asn8question8b").value);
+	var D = parseFloat(document.getElementById("asn8question8c").value);
+	var I = parseFloat(document.getElementById("asn8question8d").value);
+
+  let X = (U*I*N) / R
+  let Y = (4.0/5.0)**(3.0/2.0)   // use biot-savarts law
+  let B = Y*X
+
+	assignment8question8outputa.innerHTML = "the magnetic field at the point is: " + B.toString() + "T";
+
+
+});
+
+const assignment8question9button = document.getElementById("asn8question9button");
+
+
+const assignment8question9outputa = document.getElementById("asn8question9outputa");
+
+
+assignment8question9button.addEventListener("click", ()=>{
+
+
+	var I1 = parseFloat(document.getElementById("asn8question9a").value);
+	var L = parseFloat(document.getElementByIsd("asn8question9b").value);
+	var R  = parseFloat(document.getElementById("asn8question9c").value);
+	var I2  = parseFloat(document.getElementById("asn8question9d").value);
+
+  let X = (U*I1*I2*L);
+  let Y = Math.PI*R;
+
+  let F = X/Y;
+	assignment8question9outputa.innerHTML = "the magnitude of the force exerted on the loop is: " + F.toString() + "N";
+
+
+});
