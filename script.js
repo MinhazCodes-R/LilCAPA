@@ -1302,6 +1302,32 @@ assignment8question3button.addEventListener("click", ()=>{
 
 });
 
+
+
+const assignment8question00001button = document.getElementById("asn8question00001button");
+
+
+const assignment8question00001outputa = document.getElementById("asn8question00001outputa");
+
+
+assignment8question00001button.addEventListener("click", ()=>{
+
+
+	var B1 = parseFloat(document.getElementById("asn8question00001a").value)/(10**6);
+	var r = parseFloat(document.getElementById("asn8question00001b").value)/(10**2);
+	var B2 = parseFloat(document.getElementById("asn8question00001c").value)/(10**6);
+
+  let current = B1*(10**7)*r/(2);
+  let distance = 2*current/(10**7*B2); 
+
+	assignment8question00001outputa.innerHTML = "At a distance of " + distance.toString() +" m the magnetic field is " +
+  (document.getElementById("asn8question00001a").value) + " uT";
+
+
+});
+
+
+
 const assignment8question4button = document.getElementById("asn8question4button");
 
 
