@@ -1373,7 +1373,7 @@ const assignment8question5outputb = document.getElementById("asn8question5output
 assignment8question5button.addEventListener("click", ()=>{
 
 
-	var R = parseFloat(document.getElementById("asn8question5a").value);
+	var R = parseFloat(document.getElementById("asn8question5a").value)/100;
 	var I = parseFloat(document.getElementById("asn8question5b").value);
 
   let r = R / 2
