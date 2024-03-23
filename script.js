@@ -1331,7 +1331,6 @@ assignment8question00001button.addEventListener("click", ()=>{
 const assignment8question4button = document.getElementById("asn8question4button");
 
 
-const assignment8question4outputa = document.getElementById("asn8question4outputa");
 const assignment8question4outputb = document.getElementById("asn8question4outputb");
 const assignment8question4outputc = document.getElementById("asn8question4outputc");
 const assignment8question4outputd = document.getElementById("asn8question4outputd");
@@ -1340,13 +1339,10 @@ const assignment8question4outputd = document.getElementById("asn8question4output
 assignment8question4button.addEventListener("click", ()=>{
 
 
-	var B1 = parseFloat(document.getElementById("asn8question4a").value);
-	var D1 = parseFloat(document.getElementById("asn8question4b").value);
-	var B2 = parseFloat(document.getElementById("asn8question4c").value);
 	var I = parseFloat(document.getElementById("asn8question4d").value);
-	var D = parseFloat(document.getElementById("asn8question4e").value);
-	var R = parseFloat(document.getElementById("asn8question4f").value);
-	var R4 = parseFloat(document.getElementById("asn8question4g,").value);
+	var D = parseFloat(document.getElementById("asn8question4e").value)/2000;
+	var R = parseFloat(document.getElementById("asn8question4f").value)/100;
+	var R4 = parseFloat(document.getElementById("asn8question4g,").value)**(-1);
 
 
   let R1 = R - D;
@@ -1355,18 +1351,11 @@ assignment8question4button.addEventListener("click", ()=>{
   let Y = (1/R1) - (1/R2);
 
   let B3 = X*Y;
-  
 
-  B2 = B2/1.0;
-  D1 = D1/100.0;
-  let ratio = B1 / B2;
+  let D3 = Math.sqrt(R4)*R;
 
-  let D2 = ratio * D1;
-  let D3 = Math.sqrt(R4) * R;
-  
-	assignment8question4outputa.innerHTML = "at this distance" + D2.toString()+ "m" , "the field is " + B2.toString()+ "T";
-	assignment8question4outputb.innerHTML = "the magnetic field from the middle of the cord is : " + B3.toString() + "T";
-	assignment8question4outputc.innerHTML = "the distance at which the field is" + R4.toString() + "as large is : "+ D3.toString() + "m";
+	assignment8question4outputb.innerHTML = "the magnetic field from the middle of the cord is : " + B3.toString() + " T";
+	assignment8question4outputc.innerHTML = "the distance at which the field is " + R4.toString() + " as large is : "+ D3.toString() + "m";
   assignment8question4outputd.innerHTML = "the magnetic field outside of coaxial cable is: " + "0" + "T";
 
 
