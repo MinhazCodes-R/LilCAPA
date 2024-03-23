@@ -1432,9 +1432,8 @@ const assignment8question7outputa = document.getElementById("asn8question7output
 
 assignment8question7button.addEventListener("click", ()=>{
 
-
 	var R  = parseFloat(document.getElementById("asn8question7a").value)/100;
-	var Q = parseFloat(document.getElementById("asn8question7b").value);
+	var Q = parseFloat(document.getElementById("asn8question7b").value)/(10**6);
 	var W = parseFloat(document.getElementById("asn8question7c").value);
 
   let A = Math.PI*(R**2);
@@ -1479,7 +1478,7 @@ assignment8question9button.addEventListener("click", ()=>{
 
 
 	var I1 = parseFloat(document.getElementById("asn8question9a").value);
-	var L = parseFloat(document.getElementByIsd("asn8question9b").value);
+	var L = parseFloat(document.getElementById("asn8question9b").value);
 	var R  = parseFloat(document.getElementById("asn8question9c").value);
 	var I2  = parseFloat(document.getElementById("asn8question9d").value);
 
