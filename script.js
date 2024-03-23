@@ -1438,7 +1438,7 @@ assignment8question7button.addEventListener("click", ()=>{
 	var W = parseFloat(document.getElementById("asn8question7c").value);
 
   let A = Math.PI*(R**2);
-  let I = (Q*W) / (2*math.pi);
+  let I = (Q*W) / (2*Math.PI);
   let Mo = I*A;
 
 	assignment8question7outputa.innerHTML = "the magnetic moment of the ring is: " + Mo.toString() + "A*m^2";
@@ -1460,7 +1460,7 @@ assignment8question8button.addEventListener("click", ()=>{
 	var D = parseFloat(document.getElementById("asn8question8c").value);
 	var I = parseFloat(document.getElementById("asn8question8d").value);
 
-  let X = (U*I*N) / R
+  let X = (U*I*N) / R;
   let Y = (4.0/5.0)**(3.0/2.0)   // use biot-savarts law
   let B = Y*X
 
