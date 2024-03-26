@@ -1,9 +1,12 @@
 //NOTES:
-// Update 2024 03 7
+// Update 2024 03 26
 // I mixed up assignment 3 and 5 so all names with assignment3 are actually 5 and all
 // names with assignment 5 are actually 3
 //If changes are made in the code then please edit this
 //and remove the corresponding note
+
+//Importing Local Libraries
+
 
 
 //tabs for the upper selector
@@ -1487,6 +1490,302 @@ assignment8question9button.addEventListener("click", ()=>{
 
   let F = X/Y;
 	assignment8question9outputa.innerHTML = "the magnitude of the force exerted on the loop is: " + F.toString() + "N";
+
+
+});
+
+
+//For Assignment 9
+
+//For TABS
+
+const taba9 = document.querySelectorAll('[data-taba9-target]');
+const taba9contents = document.querySelectorAll('[data-taba9-content]');
+
+taba9.forEach(tab => {
+  tab.addEventListener('click', ()=>{
+
+    const target = document.querySelector(tab.dataset.taba9Target);
+
+    taba9contents.forEach(tabcontent => {tabcontent.classList.remove('active');});//removing all active from the taba3contents
+
+    taba9.forEach(tab2 =>{tab2.classList.remove('active');});//removing all active from taba3
+
+
+    tab.classList.add('active');
+    target.classList.add('active');
+
+  });
+});
+
+
+//
+
+const assignment9question1button = document.getElementById("asn9question1button");
+
+
+const assignment9question1outputa = document.getElementById("asn9question1outputa");
+const assignment9question1outputb = document.getElementById("asn9question1outputb");
+const assignment9question1outputc = document.getElementById("asn9question1outputc");
+
+
+assignment9question1button.addEventListener("click", ()=>{
+
+
+	var R  = parseFloat(document.getElementById("asn9question1a").value)/100;
+	var Ba = parseFloat(document.getElementById("asn9question1b").value);
+	var Bb = parseFloat(document.getElementById("asn9question1c").value);
+	var r = parseFloat(document.getElementById("asn9question1d").value);
+
+  let A = Math.PI*(R**2);
+  let F = Ba*A;
+  let E = Bb*A;
+  let I = E/r ;
+    
+
+	assignment9question1outputa.innerHTML =  "the magnetic flux through the loop is : " + F.toString() + "Wb";
+	assignment9question1outputb.innerHTML = "the magnitude of the emf induced in the loop is : " + E.toString() + "V";
+	assignment9question1outputc.innerHTML = "the magnitude of the induced current in the loop is : " + I.toString()+ "A";
+
+
+});
+
+const assignment9question2button = document.getElementById("asn9question2button");
+
+
+const assignment9question2outputa = document.getElementById("asn9question2outputa");
+const assignment9question2outputb = document.getElementById("asn9question2outputb");
+
+
+assignment9question2button.addEventListener("click", ()=>{
+
+
+	var F  = parseFloat(document.getElementById("asn9question2a").value);
+	var V = parseFloat(document.getElementById("asn9question2b").value);
+	var R = parseFloat(document.getElementById("asn9question2c").value);
+
+  let I = ((F*V)/R)**(.5);
+  let P1 = ((I**2)*R);
+  let P2 = F*V;
+
+	assignment9question2outputa.innerHTML = " the current through the resistor is : " + I.toString() + "A";
+	assignment9question2outputb.innerHTML = " the rate at which energy is delivered to the resistor is : " + P1.toString() + " W";
+
+
+});const assignment9question3button = document.getElementById("asn9question3button");
+
+
+const assignment9question3outputa = document.getElementById("asn9question3outputa");
+
+
+assignment9question3button.addEventListener("click", ()=>{
+
+
+	var d  = parseFloat(document.getElementById("asn9question3a").value);
+	var R3 = parseFloat(document.getElementById("asn9question3b").value);
+	var R1 = parseFloat(document.getElementById("asn9question3c").value);
+	var v1 = parseFloat(document.getElementById("asn9question3d").value);
+	var v2 = parseFloat(document.getElementById("asn9question3e").value);
+	var B = parseFloat(document.getElementById("asn9question3f").value);
+	var d  = parseFloat(document.getElementById("asn9question3g,").value);
+
+  let X = (v1*R2) - (v2*R1);
+  let Y = (R1*R3) + (R3*R2) + (R1*R2);
+  let Z = B*d;
+  let I = Z*(X/Y);
+
+	assignment9question3outputa.innerHTML = "the current through the " , R3 , "ohm resistor is : " + I.toString() + " A";
+
+
+});const assignment9question4button = document.getElementById("asn9question4button");
+
+
+const assignment9question4outputa = document.getElementById("asn9question4outputa");
+
+
+assignment9question4button.addEventListener("click", ()=>{
+
+
+	var N  = parseFloat(document.getElementById("asn9question4a").value);
+	var R  = parseFloat(document.getElementById("asn9question4b").value);
+	var A  = parseFloat(document.getElementById("asn9question4c").value);
+	var Q  = parseFloat(document.getElementById("asn9question4d").value);
+
+  let F = (Q*R) / N;
+  let B = F / A;
+
+
+	assignment9question4outputa.innerHTML = "the  magnitude of B is : " + B.toString() + "T";
+
+
+});const assignment9question5button = document.getElementById("asn9question5button");
+
+
+const assignment9question5outputa = document.getElementById("asn9question5outputa");
+
+
+assignment9question5button.addEventListener("click", ()=>{
+
+
+	var L = parseFloat(document.getElementById("asn9question5a").value);
+	var V = parseFloat(document.getElementById("asn9question5b").value);
+	var I  = parseFloat(document.getElementById("asn9question5c").value);
+	var R  = parseFloat(document.getElementById("asn9question5d").value);
+
+  I = I * 1.0e-3;
+  R = R / 100.0;
+  let U = (Math.pi*4.0e-7)
+  let X = (U*I*V ) / (2*Math.pi);
+  let Y = Math.log(1 + (L/R));
+  let E = X*Y;
+
+
+	assignment9question5outputa.innerHTML = "the magnitude of the emf in the rod is : " + E.toString() + "V";
+
+
+});const assignment9question6button = document.getElementById("asn9question6button");
+
+
+const assignment9question6outputa = document.getElementById("asn9question6outputa");
+
+
+assignment9question6button.addEventListener("click", ()=>{
+
+
+	var E  = parseFloat(document.getElementById("asn9question6a").value);
+	var L  = parseFloat(document.getElementById("asn9question6b").value);
+	var R  = parseFloat(document.getElementById("asn9question6c").value);
+	var A= parseFloat(document.getElementById("asn9question6d").value);
+
+  let dI = I2 - I1;
+  let dt = t;
+
+  E = L*(dI / dt);
+
+	assignment9question6outputa.innerHTML = "the magnitude of the average induced emf is : " + E.toString() + "V";
+
+
+});const assignment9question7button = document.getElementById("asn9question7button");
+
+
+const assignment9question7outputa = document.getElementById("asn9question7outputa");
+const assignment9question7outputb = document.getElementById("asn9question7outputb");
+const assignment9question7outputc = document.getElementById("asn9question7outputc");
+const assignment9question7outputd = document.getElementById("asn9question7outputd");
+
+
+assignment9question7button.addEventListener("click", ()=>{
+
+
+	var E  = parseFloat(document.getElementById("asn9question7a").value);
+	var L = parseFloat(document.getElementById("asn9question7b").value);
+	var R = parseFloat(document.getElementById("asn9question7c").value);
+	var t = parseFloat(document.getElementById("asn9question7d").value);
+	var P = parseFloat(document.getElementById("asn9question7e").value);
+
+  P = P / 100.0;
+  t = t * 1.0e-6;
+  E = E / 1.0;
+  L = L *1.0e-3;
+  R = R / 1.0;
+
+
+  let tau = L / R;
+  let X = -1*(t/tau);
+  let If = E/R;
+  let I = If *(1-(Math.E)**X);
+  let Y = (1- P );
+  let t2 = Math.log(Y) * tau *(-1.0);
+
+	assignment9question7outputa.innerHTML = "the time constant of the circuit is: " + tau.toString() + "s";
+	assignment9question7outputb.innerHTML = " the current in the circuit after" , t , "s is" + I.toString() + "A";
+	assignment9question7outputc.innerHTML = "the final steady state current is: " + If.toString()+ "A";
+	assignment9question7outputd.innerHTML = " the time it takes for the current to reach" , P*100 , "% of its maximum value is: " + t2.toString() + "s";
+
+
+});const assignment9question8button = document.getElementById("asn9question8button");
+
+
+const assignment9question8outputa = document.getElementById("asn9question8outputa");
+const assignment9question8outputb = document.getElementById("asn9question8outputb");
+const assignment9question8outputc = document.getElementById("asn9question8outputc");
+const assignment9question8outputd = document.getElementById("asn9question8outputd");
+const assignment9question8outpute = document.getElementById("asn9question8outpute");
+
+
+assignment9question8button.addEventListener("click", ()=>{
+
+
+	var R1  = parseFloat(document.getElementById("asn9question8a").value);
+	var R2 = parseFloat(document.getElementById("asn9question8b").value);
+	var L = parseFloat(document.getElementById("asn9question8c").value);
+	var E = parseFloat(document.getElementById("asn9question8d").value);
+	var E2 = parseFloat(document.getElementById("asn9question8e").value);
+
+
+  let Rp =((1/R1) + (1/R2))**-1
+  let Rs = R1 + R2
+  
+  let I = E / Rp;
+  let V1 = I * R1;
+  let V2 = I * R2;
+  let V3 = V1 + V2;
+  let tau = L / Rs;
+  let t2 = Math.log(E2/V3) * tau *(-1.0);
+
+
+	assignment9question8outputa.innerHTML = "The current in the inductor after a long time is: " + I.toString() + "A";
+	assignment9question8outputb.innerHTML = "The initial voltage across R1 is : " + V1.toString() + "V";
+	assignment9question8outputc.innerHTML = "The initial voltage across R2 : " + V2.toString() +"V";
+	assignment9question8outputd.innerHTML = "The intial voltage across the inductor is: , " + V3.toString() + "V";
+	assignment9question8outpute.innerHTML = "The time it takes for the voltage to drop to" , E2 , "V is: ", t2 , "s";
+
+
+});const assignment9question9button = document.getElementById("asn9question9button");
+
+
+const assignment9question9outputa = document.getElementById("asn9question9outputa");
+const assignment9question9outputb = document.getElementById("asn9question9outputb");
+
+
+assignment9question9button.addEventListener("click", ()=>{
+
+
+	var B = parseFloat(document.getElementById("asn9question9a").value);
+	var D = parseFloat(document.getElementById("asn9question9b").value);
+	var L = parseFloat(document.getElementById("asn9question9c").value)/100;
+
+
+  let R = D / 200.0
+  let V = (Math.PI*(R**2))*L;
+  let u = (Math.PI*4.0e-7);
+
+  let U = (B**2) / (2*u)
+  let ub = U*V
+
+	assignment9question9outputa.innerHTML = "the magnetic energy density in the field is: " + U.toString()+ "J/m^3";
+	assignment9question9outputb.innerHTML = "the energy stored in the magnetic field is: "+ ub.toString() + "J";
+
+
+});const assignment9question10button = document.getElementById("asn9question10button");
+
+
+const assignment9question10outputa = document.getElementById("asn9question10outputa");
+
+
+assignment9question10button.addEventListener("click", ()=>{
+
+
+	var N  = parseFloat(document.getElementById("asn9question10a").value);
+	var L  = parseFloat(document.getElementById("asn9question10b").value)/100;
+	var R  = parseFloat(document.getElementById("asn9question10c").value);
+	var B  = parseFloat(document.getElementById("asn9question10d").value);
+
+  let w = (R*pi) / (30);
+  let A = (L**2);
+  let E = N*A*B*w;
+
+	assignment9question10outputa.innerHTML = "the maximum emf induced by the field is: " + E.toString() + " V ";
 
 
 });

@@ -234,3 +234,10 @@
 .active[data-taba8-content]{
   display:block;
 }
+
+[data-taba9-content]{
+  display:none;
+}
+.active[data-taba9-content]{
+  display:block;
+}
