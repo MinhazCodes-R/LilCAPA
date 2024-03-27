@@ -3,23 +3,29 @@
 
 .choicetitle{
   color: rgb(44, 122, 40);
+  margin-left: 5%;
 }
 
 .choiceselection{
   color: rgb(34, 140, 49);
+  margin-left: 5%;
 }
 
 #home{
   color:rgb(54, 59, 128);
+  max-width: fit-content;
+  margin-left: 5%;
 }
 
 /* not available id tabs */
 
 .asignnotvail{
   color: rgb(150, 10, 10);
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/*  */
 
 
 [data-tab-content] {
@@ -42,7 +48,7 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid black;
   }
 
   .tabsa1{
