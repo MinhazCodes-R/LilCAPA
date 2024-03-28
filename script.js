@@ -1583,11 +1583,11 @@ assignment9question3button.addEventListener("click", ()=>{
 
 	var d  = parseFloat(document.getElementById("asn9question3a").value);
 	var R3 = parseFloat(document.getElementById("asn9question3b").value);
-	var R1 = parseFloat(document.getElementById("asn9question3c").value);
-	var v1 = parseFloat(document.getElementById("asn9question3d").value);
-	var v2 = parseFloat(document.getElementById("asn9question3e").value);
-	var B = parseFloat(document.getElementById("asn9question3f").value);
-	var d  = parseFloat(document.getElementById("asn9question3g,").value);
+	var R2 = parseFloat(document.getElementById("asn9question3c").value);
+	var R1 = parseFloat(document.getElementById("asn9question3d").value);
+	var v1 = parseFloat(document.getElementById("asn9question3e").value);
+	var v2= parseFloat(document.getElementById("asn9question3f").value);
+	var B = parseFloat(document.getElementById("asn9question3g,").value);
 
   let X = (v1*R2) - (v2*R1);
   let Y = (R1*R3) + (R3*R2) + (R1*R2);
